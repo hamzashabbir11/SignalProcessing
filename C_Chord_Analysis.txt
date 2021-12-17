@@ -1,0 +1,22 @@
+# y is signal from recording 
+# fs is sampling frequncy given is Cchord.mat file
+# numel function returns no of elements in an array  
+
+
+load Cchord.mat
+[~,n]=size(y)
+t=0:1:n-1
+
+
+t=t/fs
+plot(t,y)
+
+
+yfft=abs(fft(y))
+
+
+f=0:1:n-1
+
+f=f*fs/n
+plot(f,yfft)
+xlim([0 1000])
